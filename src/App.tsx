@@ -1,7 +1,8 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { Typography } from '@mui/material';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { Typography } from "@mui/material";
+import State from "./components/State";
 
 function App() {
   return (
@@ -11,8 +12,8 @@ function App() {
         <Typography>Doctari React Labs</Typography>
       </header>
 
-      <main className='main'>
-        
+      <main className="main">
+        <State />
       </main>
     </div>
   );
