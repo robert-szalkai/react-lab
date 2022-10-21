@@ -6,7 +6,7 @@ const State = () => {
 
   return (
     <Box display="grid" gap={5}>
-      <Typography variant="h3">Use state hook</Typography>
+      <Typography variant="h4">Use state hook</Typography>
 
       <Box display="flex" gap={2} alignItems="center">
         <Button variant="contained">-</Button>
