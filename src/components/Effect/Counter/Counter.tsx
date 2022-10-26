@@ -1,32 +1,13 @@
 import { Box, Button, Typography } from "@mui/material";
 import { blue } from "@mui/material/colors";
 import React, { useState } from "react";
-import ShowCount from "./ShowCount";
 
-const wait = (ms: number) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      return resolve(true);
-    }, ms);
-  });
-};
-
-const State = () => {
+const Counter = () => {
   const [count, setCount] = useState(0);
-
-  const onDecrement = () => {
-    setCount(count - 1);
-  };
-
-  const onIncrement = async () => {
-    await wait(1500);
-    setCount((prevState) => prevState + 1);
-  };
 
   return (
     <Box display="grid" gap={3}>
-      <Typography variant="h6">useState exercise</Typography>
-
+      <Typography variant="h6">setInterval exercise</Typography>
       <Box
         display="grid"
         justifyItems="center"
@@ -39,19 +20,18 @@ const State = () => {
         <Typography color={blue[500]} variant="h1">
           {count}
         </Typography>
+
         <Box display="flex" gap={2} alignItems="center">
-          <Button variant="contained" onClick={onDecrement}>
+          <Button variant="contained" onClick={() => setCount(count - 1)}>
             -
           </Button>
-          <Button variant="contained" onClick={onIncrement}>
+          <Button variant="contained" onClick={() => setCount(count + 1)}>
             +
           </Button>
         </Box>
       </Box>
-
-      <ShowCount key={count} count={count} />
     </Box>
   );
 };
 
-export default State;
+export default Counter;
