@@ -13,6 +13,10 @@ const pages = [
     title: "useEffect",
     path: "useEffect",
   },
+  {
+    title: "redux",
+    path: "redux",
+  }
 ];
 
 
