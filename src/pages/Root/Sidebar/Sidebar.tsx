@@ -1,8 +1,8 @@
-import { Box, Typography } from "@mui/material";
-import { grey } from "@mui/material/colors";
-import { NavLink } from "react-router-dom";
-import logo from "logo.svg";
-import "./Sidebar.css";
+import { Box, Typography } from "@mui/material"
+import { grey } from "@mui/material/colors"
+import { NavLink } from "react-router-dom"
+import logo from "logo.svg"
+import "./Sidebar.css"
 
 const pages = [
   {
@@ -16,9 +16,12 @@ const pages = [
   {
     title: "redux",
     path: "redux",
-  }
-];
-
+  },
+  {
+    title: "reduxRefresh",
+    path: "redux-refresh",
+  },
+]
 
 const Sidebar = () => {
   return (
@@ -49,16 +52,16 @@ const Sidebar = () => {
               key={page.path}
               to={page.path}
               className={({ isActive }) => {
-                return ["nav-link", isActive ? "active" : ""].join(" ");
+                return ["nav-link", isActive ? "active" : ""].join(" ")
               }}
             >
               {page.title}
             </NavLink>
-          );
+          )
         })}
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

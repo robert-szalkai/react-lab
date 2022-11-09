@@ -11,6 +11,7 @@ import State from "components/State"
 import Effect from "components/Effect"
 import { store } from "redux/store"
 import Redux from "components/Redux/Redux"
+import ReduxRefresh from "components/ReduxRefresh/ReduxRefresh"
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         path: "/redux",
         element: <Redux />
       },
+      {
+        path: "/redux-refresh",
+        element: <ReduxRefresh />
+      }
     ],
   },
 ])
