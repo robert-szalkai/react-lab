@@ -7,6 +7,7 @@ import Root from "pages/Root";
 import Error from "pages/Error";
 import State from "components/State";
 import Effect from "components/Effect";
+import Lazy from "components/Lazy";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/useEffect",
         element: <Effect />,
+      },
+      {
+        path: "/lazy",
+        element: <Lazy />,
       },
     ],
   },

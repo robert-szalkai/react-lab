@@ -13,6 +13,10 @@ const pages = [
     title: "useEffect",
     path: "useEffect",
   },
+  {
+    title: "Lazy",
+    path: "lazy",
+  },
 ];
 
 
@@ -23,6 +27,7 @@ const Sidebar = () => {
         display: "grid",
         alignContent: "start",
         backgroundColor: grey[100],
+        minWidth: 300
       }}
     >
       <Box
