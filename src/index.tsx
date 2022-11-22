@@ -1,12 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import reportWebVitals from "./reportWebVitals";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "pages/Root";
-import Error from "pages/Error";
-import State from "components/State";
-import Effect from "components/Effect";
+import React from "react"
+import ReactDOM from "react-dom/client"
+import "./index.css"
+import reportWebVitals from "./reportWebVitals"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import Root from "pages/Root"
+import Error from "pages/Error"
+import State from "components/State"
+import Effect from "components/Effect"
+import ContextCounter from "components/Context"
+import ContextMultipleCounter from "components/Context/MultipleCounters/ContextMultipleCounter"
+import MultipleCountersProvider from "contexts/contextSolution"
 
 const router = createBrowserRouter([
   {
@@ -22,21 +25,29 @@ const router = createBrowserRouter([
         path: "/useEffect",
         element: <Effect />,
       },
+      {
+        path: "/context",
+        element: <ContextCounter />,
+      },
+      {
+        path: "/contextCounters",
+        element: <ContextMultipleCounter />,
+      },
     ],
   },
-]);
+])
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 
 root.render(
   // <React.StrictMode>
+  <MultipleCountersProvider>
     <RouterProvider router={router} />
+  </MultipleCountersProvider>
   // </React.StrictMode>
-);
+)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+reportWebVitals()
