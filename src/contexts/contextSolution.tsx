@@ -1,4 +1,4 @@
-import { createContext, FC, ReactNode, useState } from "react"
+import { createContext, ReactNode, useState } from "react"
 
 interface ContextCounters {
   counter1: number
