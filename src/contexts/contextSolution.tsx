@@ -1,37 +1,33 @@
-import { createContext, ReactNode, useState } from "react"
+import {
+  createContext,
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react"
 
-interface ContextCounters {
-  counter1: number
-  counter2: number
-  setCounter1: (value: number) => void
-  setCounter2: (value: number) => void
+interface ContextCounter {
+  counter: number
+  setCounter: Dispatch<SetStateAction<number>>
 }
 
-const defaultContextValues: ContextCounters = {
-  counter1: 0,
-  counter2: 0,
-  setCounter1: () => {},
-  setCounter2: () => {},
+const defaultContextValues: ContextCounter = {
+  counter: 0,
+  setCounter: () => {},
 }
 
-export const MultipleCountersContext =
-  createContext<ContextCounters>(defaultContextValues)
+export const CounterContext =
+  createContext<ContextCounter>(defaultContextValues)
 
-const MultipleCountersProvider = ({ children }: { children: ReactNode }) => {
-  const [counter1, setCounter1] = useState<number>(
-    defaultContextValues.counter1
-  )
-  const [counter2, setCounter2] = useState<number>(
-    defaultContextValues.counter1
-  )
+const CounterProvider = ({ children }: { children: ReactNode }) => {
+  const [counter, setCounter] = useState<number>(defaultContextValues.counter)
 
   return (
-    <MultipleCountersContext.Provider
-      value={{ counter1, counter2, setCounter1, setCounter2 }}
-    >
+    <CounterContext.Provider value={{ counter, setCounter }}>
       {children}
-    </MultipleCountersContext.Provider>
+    </CounterContext.Provider>
   )
 }
 
-export default MultipleCountersProvider
+export default CounterProvider

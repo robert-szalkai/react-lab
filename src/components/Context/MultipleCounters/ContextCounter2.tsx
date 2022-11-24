@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from "@mui/material"
 import { blue } from "@mui/material/colors"
-import { MultipleCountersContext } from "contexts/contextSolution"
+import { MultipleCountersContext } from "contexts/contextMultipleCounters"
 import { useContext } from "react"
 
 const Counter2 = () => {

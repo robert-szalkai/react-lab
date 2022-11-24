@@ -9,7 +9,9 @@ import State from "components/State"
 import Effect from "components/Effect"
 import ContextCounter from "components/Context"
 import ContextMultipleCounter from "components/Context/MultipleCounters/ContextMultipleCounter"
-import MultipleCountersProvider from "contexts/contextSolution"
+import MultipleCountersProvider from "contexts/contextMultipleCounters"
+import CounterProvider from "contexts/contextSolution"
+// import ContextCounterSolution from "components/Context/ContextSolution"
 
 const router = createBrowserRouter([
   {
@@ -42,7 +44,9 @@ const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 root.render(
   // <React.StrictMode>
   <MultipleCountersProvider>
-    <RouterProvider router={router} />
+    <CounterProvider>
+      <RouterProvider router={router} />
+    </CounterProvider>
   </MultipleCountersProvider>
   // </React.StrictMode>
 )
