@@ -6,7 +6,10 @@ const Lodash = () => {
   console.log(_);
   return (
     <Box>
-      <Typography>Lodash</Typography>
+      <Typography>
+        Lodash makes JavaScript easier by taking the hassle out of working with
+        arrays, numbers, objects, strings, etc.
+      </Typography>
     </Box>
   );
 };
